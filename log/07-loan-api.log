@@ -1,0 +1,104 @@
+2024-12-29 12:01:23.877 [main] [ , ,  ] [Request-Trace-Id: ] ERROR o.s.boot.SpringApplication:857 - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1fdfafd2 - Failed to instantiate converter class [org.tuxdude.logback.extensions.LogColorizer] as a composite converter for keyword [colorize] ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.tuxdude.logback.extensions.LogColorizer
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1fdfafd2 - Failed to create converter for [%colorize] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.doer.ImsLoanApplication.main(ImsLoanApplication.java:10)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1fdfafd2 - Failed to instantiate converter class [org.tuxdude.logback.extensions.LogColorizer] as a composite converter for keyword [colorize] ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.tuxdude.logback.extensions.LogColorizer
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@1fdfafd2 - Failed to create converter for [%colorize] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:291)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:269)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:81)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:197)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 19 common frames omitted
+	Suppressed: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.tuxdude.logback.extensions.LogColorizer
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:69)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:44)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:33)
+		at ch.qos.logback.core.pattern.parser.Compiler.createCompositeConverter(Compiler.java:130)
+		at ch.qos.logback.core.pattern.parser.Compiler.compile(Compiler.java:47)
+		at ch.qos.logback.core.pattern.parser.Parser.compile(Parser.java:87)
+		at ch.qos.logback.core.pattern.PatternLayoutBase.start(PatternLayoutBase.java:85)
+		at ch.qos.logback.classic.encoder.PatternLayoutEncoder.start(PatternLayoutEncoder.java:28)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandleComplex(ImplicitModelHandler.java:207)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandle(ImplicitModelHandler.java:186)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:257)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:222)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:136)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:178)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:123)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:66)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:300)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$2(LogbackLoggingSystem.java:262)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:483)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:255)
+		... 23 common frames omitted
+	Caused by: java.lang.ClassNotFoundException: org.tuxdude.logback.extensions.LogColorizer
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:56)
+		... 46 common frames omitted
+2024-12-29 12:03:22.199 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 7580 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2024-12-29 12:03:22.217 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2024-12-29 12:03:24.906 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-29 12:03:24.908 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-12-29 12:03:24.908 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-29 12:03:24.948 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-12-29 12:03:25.450 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2024-12-29 12:03:25.959 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6af87130
+2024-12-29 12:03:25.961 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2024-12-29 12:03:26.118 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 1031b462-2b72-43a3-902e-97a400b84c5c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-29 12:03:26.319 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-29 12:03:26.341 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 5.761 seconds (process running for 7.478)
+2024-12-29 12:06:05.825 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2024-12-29 12:06:05.896 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2024-12-29 12:06:09.568 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 7757 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2024-12-29 12:06:09.574 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2024-12-29 12:06:11.009 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-29 12:06:11.012 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-12-29 12:06:11.012 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-29 12:06:11.056 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-12-29 12:06:11.560 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2024-12-29 12:06:12.136 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@18a98913
+2024-12-29 12:06:12.141 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2024-12-29 12:06:12.296 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 57d15c60-aa67-436a-b811-fd8740c29485
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-29 12:06:12.579 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-29 12:06:12.599 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 3.653 seconds (process running for 4.667)
+2024-12-29 12:13:58.817 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2024-12-29 12:13:58.833 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
