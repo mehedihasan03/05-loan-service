@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -18,7 +19,7 @@ public class ManagementResponseDto {
     private String officeId;
     private String officeNameEn;
     private String officeNameBn;
-    private LocalDate businessDate;
+    private Date businessDate;
     private String businessDay;
     private String btnCreateTransactionEnabled;
     private List<String> samityIdList;

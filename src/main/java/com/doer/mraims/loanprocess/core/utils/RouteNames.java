@@ -5,5 +5,7 @@ public class RouteNames {
     public static final String V_1 = "/v1";
     public static final String V2 = "/v2";
     public static final String BASE_URL = "/mra-ims/mfi/process/api";
+    public static final String MANAGEMENT_PROCESS = "/management-process";
+    public static final String BY_OFFICE = "/by-office";
 
 }

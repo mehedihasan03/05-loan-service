@@ -4,21 +4,24 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
 @Slf4j
-@Service
-@RequiredArgsConstructor
+@Repository("queryExecutorDao")
 public class QueryExecutorDao implements QueryExecutorInterface {
 
-    private final JdbcTemplate jdbcTemplate;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public int saveSingleRow(String sql, Object... params) {
@@ -39,7 +42,6 @@ public class QueryExecutorDao implements QueryExecutorInterface {
         }
     }
 
-
     @Override
     public JSONArray getMultipleRows(String sql, Object[] params) {
         if (!StringUtils.hasText(sql)) {
@@ -53,6 +55,7 @@ public class QueryExecutorDao implements QueryExecutorInterface {
             JSONArray result = new JSONArray();
             for (Map<String, Object> row : rows) {
                 JSONObject json = new JSONObject();
+                json.put("name", new BigDecimal(0));
                 row.forEach((key, value) -> json.put(key.toLowerCase(), value));
                 result.put(json);
             }

@@ -31,6 +31,7 @@ dependencies {
     implementation("org.tuxdude.logback.extensions:logback-colorizer:1.0.1")
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     implementation 'org.json:json:20230227'
+    implementation 'org.modelmapper:modelmapper:3.2.2'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
     compileOnly 'org.projectlombok:lombok'
