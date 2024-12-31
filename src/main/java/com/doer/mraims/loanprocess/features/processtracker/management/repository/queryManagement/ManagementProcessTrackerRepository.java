@@ -27,9 +27,7 @@ public class ManagementProcessTrackerRepository {
 
     @Autowired
     private ApplicationContext applicationContext;
-
     private final QueryExecutorInterface queryExecutorInterface;
-
     private ManagementProcessTrackerQueryProvider queryProvider;
 
     public ManagementProcessTrackerRepository(QueryExecutorInterface queryExecutorInterface) {

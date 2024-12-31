@@ -20,15 +20,13 @@ import static com.doer.mraims.loanprocess.core.utils.RouteNames.*;
 @RestController
 @RequestMapping(BASE_URL + V_1)
 public class ManagementProcessTrackerController {
+
 @Autowired
 private TokenValidationService tokenValidationService;
 @Autowired
 private ModelMapper modelMapper;
+@Autowired
 private ManagementProcessTrackerService managementProcessTrackerService;
-
-    public ManagementProcessTrackerController(ManagementProcessTrackerService managementProcessTrackerService) {
-        this.managementProcessTrackerService = managementProcessTrackerService;
-    }
 
     @PostMapping(MANAGEMENT_PROCESS + BY_OFFICE)
     public ResponseEntity<CommonObjectResponseDTO<JSONObject>> getManagementProcessTracker(
@@ -41,9 +39,7 @@ private ManagementProcessTrackerService managementProcessTrackerService;
         try {
             AuthUser authUser = tokenValidationService.validateAndFetchUser(authorizationHeader);
             authUser.setOfficeId(officeId);
-
-            CommonObjectResponseDTO<JSONObject> response =
-                    managementProcessTrackerService.getManagementProcessTrackerByOffice(authUser, officeId);
+            CommonObjectResponseDTO<JSONObject> response = managementProcessTrackerService.getManagementProcessTrackerByOffice(authUser, officeId);
             return ResponseEntity.ok(response);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(new CommonObjectResponseDTO<>(false, 400, "Invalid input: " + e.getMessage(), null));
