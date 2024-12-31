@@ -1,5 +1,9 @@
 package com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement;
 
+import com.doer.mraims.loanprocess.auth.model.AuthUser;
+
+import java.util.Map;
+
 public interface ManagementProcessTrackerQueryProvider {
-    String getManagementProcessTrackerQuery(String schemaName);
+    Map<String, Object> getManagementProcessTrackerQuery(AuthUser authUser, String officeId);
 }

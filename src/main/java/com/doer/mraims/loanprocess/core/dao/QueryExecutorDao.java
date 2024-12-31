@@ -43,15 +43,9 @@ public class QueryExecutorDao implements QueryExecutorInterface {
     }
 
     @Override
-    public JSONArray getMultipleRows(String sql, Object[] params) {
-        if (!StringUtils.hasText(sql)) {
-            log.warn("SQL is null or empty: {}", sql);
-            return new JSONArray();
-        }
-
+    public JSONArray getMultipleRows(Map<String, Object> objectMap) {
         try {
-            List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql, params);
-
+            List<Map<String, Object>> rows = jdbcTemplate.queryForList((String) objectMap.get("query"), objectMap.get("params"));
             JSONArray result = new JSONArray();
             for (Map<String, Object> row : rows) {
                 JSONObject json = new JSONObject();
@@ -59,33 +53,27 @@ public class QueryExecutorDao implements QueryExecutorInterface {
                 row.forEach((key, value) -> json.put(key.toLowerCase(), value));
                 result.put(json);
             }
-
             return result;
         } catch (Exception e) {
-            log.error("Error while executing query: {}", sql, e);
+            log.error("Error while executing query: {}", objectMap.get("query"), e);
             throw new RuntimeException("Failed to execute query", e);
         }
     }
 
     @Override
-    public JSONObject getSingleRow(String sql, Object[] params) {
-        if (!StringUtils.hasText(sql)) {
-            log.warn("SQL is null or empty: {}", sql);
-            return new JSONObject();
-        }
-
+    public JSONObject getSingleRow(Map<String, Object> objectMap) {
         try {
-            Map<String, Object> row = jdbcTemplate.queryForMap(sql, params);
+            Map<String, Object> row = jdbcTemplate.queryForMap((String) objectMap.get("query"), objectMap.get("params"));
 
             JSONObject result = new JSONObject();
             row.forEach((key, value) -> result.put(key.toLowerCase(), value));
 
             return result;
         } catch (EmptyResultDataAccessException e) {
-            log.warn("No data found for query: {}", sql);
+            log.warn("No data found for query: {}", objectMap.get("query"));
             return new JSONObject();
         } catch (Exception e) {
-            log.error("Error while executing query: {}", sql, e);
+            log.error("Error while executing query: {}", objectMap.get("query"), e);
             throw new RuntimeException("Failed to execute query", e);
         }
     }
