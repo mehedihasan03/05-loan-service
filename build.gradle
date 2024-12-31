@@ -26,7 +26,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.security:spring-security-oauth2-jose'
+//    implementation 'org.springframework.security:spring-security-oauth2-jose'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.apache.commons:commons-text:1.10.0'
     implementation("org.tuxdude.logback.extensions:logback-colorizer:1.0.1")

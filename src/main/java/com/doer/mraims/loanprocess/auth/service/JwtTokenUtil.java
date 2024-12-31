@@ -4,6 +4,8 @@ import com.doer.mraims.loanprocess.core.helper.CommonObjectResponseDTO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
+import java.security.Key;
 
 @Component
 @Slf4j
@@ -22,11 +25,11 @@ public class JwtTokenUtil {
     public CommonObjectResponseDTO<Claims>  validateToken(String token) {
         try {
             Claims claims = Jwts.parserBuilder()
-                    .setSigningKey(jwtSecretKey.getBytes(StandardCharsets.UTF_8))
+                    .setSigningKey(jwtSecretKey.getBytes())
                     .build()
                     .parseClaimsJws(token)
                     .getBody();
-            if (claims.get("isValid") == null || !(boolean) claims.get("isValid")) {
+            if (claims.get("user_id") == null || claims.get("user_id").toString().isEmpty()) {
                 return new CommonObjectResponseDTO<>(false, 401, "Unauthorized", null);
             }
             return new CommonObjectResponseDTO<>(true, 200, "Token is valid", claims);

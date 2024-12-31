@@ -13,6 +13,7 @@ public class AuthUser {
     private String userId;
     private String userName;
     private String userType;
+    private String userRole;
     private String mfiId;
     private String instituteOid;
     private String schemaName;

@@ -2,24 +2,21 @@ package com.doer.mraims.loanprocess.features.processtracker.management;
 
 
 import com.doer.mraims.loanprocess.auth.model.AuthUser;
-import com.doer.mraims.loanprocess.auth.model.UserInfo;
 import com.doer.mraims.loanprocess.auth.service.TokenValidationService;
 import com.doer.mraims.loanprocess.core.helper.CommonObjectResponseDTO;
 import com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService;
-import io.jsonwebtoken.Claims;
 import jakarta.validation.constraints.NotBlank;
+import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 import static com.doer.mraims.loanprocess.core.utils.RouteNames.*;
 
 
-
+@Slf4j
 @RestController
 @RequestMapping(BASE_URL + V_1)
 public class ManagementProcessTrackerController {
@@ -35,11 +32,14 @@ private ManagementProcessTrackerService managementProcessTrackerService;
 
     @PostMapping(MANAGEMENT_PROCESS + BY_OFFICE)
     public ResponseEntity<CommonObjectResponseDTO<JSONObject>> getManagementProcessTracker(
-            @RequestParam @NotBlank(message = "Office ID must not be blank") String officeId,
-            @RequestParam @NotBlank(message = "Schema name must not be blank") String schemaName, @RequestHeader("Authorization") String authorizationHeader) {
+            @RequestParam String officeId,
+            @RequestParam String schemaName,
+            @RequestHeader("Authorization") String authorizationHeader) {
+
+        log.info("Request received to get management process tracker by office: officeId={}, schemaName={}", officeId, schemaName);
+        log.info("Authorization header: {}", authorizationHeader);
         try {
-            JSONObject validateAndFetchUser = tokenValidationService.validateAndFetchUser(authorizationHeader);
-            AuthUser authUser = modelMapper.map(validateAndFetchUser, AuthUser.class);
+            AuthUser authUser = tokenValidationService.validateAndFetchUser(authorizationHeader);
             authUser.setOfficeId(officeId);
 
             CommonObjectResponseDTO<JSONObject> response =
