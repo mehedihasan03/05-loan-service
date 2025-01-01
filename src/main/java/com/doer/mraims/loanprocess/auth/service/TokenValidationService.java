@@ -49,6 +49,7 @@ public class TokenValidationService {
             authUser.setUserId(userId);
             authUser.setUserRole((String) claims.getData().get("role"));
             authUser.setSchemaName((String) claims.getData().get("sname"));
+            authUser.setMfiId((String) claims.getData().get("sid"));
             return authUser;
         } else {
             throw new IllegalArgumentException("Token is revoked or user is not signed in");

@@ -2,6 +2,8 @@ package com.doer.mraims.loanprocess.features.processtracker.management.repositor
 
 import com.doer.mraims.loanprocess.auth.model.AuthUser;
 import com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerQueryProvider;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -10,24 +12,26 @@ import java.util.Map;
 @Component("OracleManagementProcessTrackerQuery")
 public class OracleManagementProcessTrackerQuery implements ManagementProcessTrackerQueryProvider {
 
+        @Autowired
+        private JdbcTemplate jdbcTemplate;
+
+    @Override
     public Map<String, Object> getManagementProcessTrackerQuery(AuthUser authUser, String officeId) {
-        String query = "SELECT " +
-                "    MPT.MANAGEMENT_PROCESS_ID, " +
-                "    MPT.OFFICE_ID, " +
-                "    O.OFFICE_NAME_EN, " +
-                "    O.OFFICE_NAME_BN, " +
-                "    MPT.BUSINESS_DATE, " +
-                "    TO_CHAR(MPT.BUSINESS_DATE, 'DAY') AS BUSINESS_DAY " +
-                "FROM " +
-                "    " + authUser.getSchemaName() + ".MANAGEMENT_PROCESS_TRACKER MPT " +
-                "    JOIN " + authUser.getSchemaName() + ".OFFICE O ON MPT.OFFICE_ID = O.OFFICE_ID " +
-                "WHERE " +
-                "    MPT.OFFICE_ID = :officeId";
-        Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("officeId", officeId);
-        Map<String, Object> objectMap = new HashMap<>();
-        objectMap.put("query", query);
-        objectMap.put("params", paramMap);
-        return objectMap;
+        // Safely build the query string dynamically with schema and officeId
+        String query = "SELECT mpt.MANAGEMENT_PROCESS_ID, " +
+                "mpt.OFFICE_ID, " +
+                "o.OFFICE_NAME_EN, " +
+                "o.OFFICE_NAME_BN, " +
+                "mpt.BUSINESS_DATE " +
+                "FROM " + authUser.getSchemaName() + "MANAGEMENT_PROCESS_TRACKER mpt " +
+                "JOIN " + authUser.getSchemaName() + "OFFICE o ON mpt.OFFICE_ID = o.OFFICE_ID " +
+                "WHERE mpt.OFFICE_ID = ?";
+
+        // Ensuring params are passed correctly as varargs
+        Object[] params = new Object[] { officeId };  // Use Object[] to allow flexibility
+
+        return Map.of("query", query, "params", params);
     }
 }
+
+

@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
+import java.util.function.BiConsumer;
 
 @Component
 public class ManagementProcessTrackerAdapter {
@@ -36,8 +37,21 @@ public class ManagementProcessTrackerAdapter {
     }
 
     public JSONObject getManagementProcessTrackerByOffice(AuthUser authUser, String officeId) {
-        Map<String, Object> objectMap = queryProvider.getManagementProcessTrackerQuery(authUser, officeId);
-        return queryExecutorDao.getSingleRow(objectMap);
+        try {
+            // Fetch the query and parameters map
+            Map<String, Object> objectMap = queryProvider.getManagementProcessTrackerQuery(authUser, officeId);
+
+            // Extract the query and parameters from the map
+            String query = (String) objectMap.get("query");
+            Object[] params = (Object[]) objectMap.get("params");  // Extract the parameters as an Object array
+
+            // Pass the query and parameters to the query executor
+            return queryExecutorDao.getSingleRow(query, params);
+        } catch (Exception e) {
+            // Add more context to the exception message for debugging purposes
+            throw new RuntimeException("Error retrieving management process tracker for officeId: " + officeId, e);
+        }
     }
+
 
 }
