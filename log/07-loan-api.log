@@ -575,7 +575,7 @@ This generated password is for development use only. Your security configuration
 2024-12-30 18:01:46.816 [http-nio-8080-exec-1] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver:254 - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
 2024-12-30 18:01:58.891 [http-nio-8080-exec-3] [ , ,  ] [Request-Trace-Id: ] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No query provider found for feature: processtracker] with root cause
 java.lang.IllegalArgumentException: No query provider found for feature: processtracker
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:45)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:45)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -702,7 +702,7 @@ org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad 
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -852,7 +852,7 @@ oracle.jdbc.OracleDatabaseException: ORA-00936: missing expression
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -989,7 +989,7 @@ org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -1132,7 +1132,7 @@ org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad 
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -1282,7 +1282,7 @@ oracle.jdbc.OracleDatabaseException: ORA-00936: missing expression
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -1409,7 +1409,7 @@ org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad 
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -1559,7 +1559,7 @@ oracle.jdbc.OracleDatabaseException: ORA-00936: missing expression
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -1726,7 +1726,7 @@ org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad 
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -1876,7 +1876,7 @@ oracle.jdbc.OracleDatabaseException: ORA-00923: FROM keyword not found where exp
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -1983,7 +1983,7 @@ org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad 
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -2134,7 +2134,7 @@ oracle.jdbc.OracleDatabaseException: ORA-00923: FROM keyword not found where exp
 	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:889)
 	at org.springframework.jdbc.core.JdbcTemplate.queryForMap(JdbcTemplate.java:928)
 	at com.doer.mraims.loanprocess.core.dao.QueryExecutorDao.getSingleRow(QueryExecutorDao.java:75)
-	at com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerRepository.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
+	at com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter.getManagementProcessTrackerByOffice(ManagementProcessTrackerRepository.java:52)
 	at com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService.getManagementProcessTrackerByOffice(ManagementProcessTrackerService.java:16)
 	at com.doer.mraims.loanprocess.features.processtracker.management.ManagementProcessTrackerController.getManagementProcessTracker(ManagementProcessTrackerController.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -3059,3 +3059,633 @@ https://docs.oracle.com/error-help/db/ora-17003/
 2024-12-31 16:32:16.193 [http-nio-8080-exec-1] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-12-31 16:32:16.258 [http-nio-8080-exec-1] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:39 - Request received to get management process tracker by office: officeId=1020, schemaName=TEMPLATE
 2024-12-31 16:32:16.259 [http-nio-8080-exec-1] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:40 - Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibXJhLWFkbWluIiwicm9sZSI6Ik1SQSBBRE1JTiIsInNuYW1lIjpudWxsLCJpYXQiOjE3MzU2Mzg3NjIsImV4cCI6MTc2NzE5NjM2Mn0.YCCJIiheiaUoHiUc1-3h9hPekNjUSN7rwUcbtWclKhI
+2024-12-31 17:12:32.292 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2024-12-31 17:12:32.343 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2024-12-31 17:12:42.530 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 20607 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2024-12-31 17:12:42.535 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2024-12-31 17:12:44.276 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-31 17:12:44.278 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-12-31 17:12:44.279 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-31 17:12:44.330 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-12-31 17:12:45.297 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2024-12-31 17:12:46.025 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@531a716c
+2024-12-31 17:12:46.032 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2024-12-31 17:12:46.297 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-31 17:12:46.327 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 5.008 seconds (process running for 7.975)
+2024-12-31 17:17:27.153 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2024-12-31 17:17:27.210 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2024-12-31 17:17:34.930 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 20785 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2024-12-31 17:17:34.945 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2024-12-31 17:17:37.817 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-31 17:17:37.820 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-12-31 17:17:37.820 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-31 17:17:37.909 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-12-31 17:17:38.485 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 3b6de5a9-74ba-48aa-bb54-86ae44180c5c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-31 17:17:39.170 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2024-12-31 17:17:39.707 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@621dc63d
+2024-12-31 17:17:39.709 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2024-12-31 17:17:39.885 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-31 17:17:39.917 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 7.303 seconds (process running for 9.636)
+2024-12-31 17:17:59.772 [http-nio-8080-exec-1] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-31 17:17:59.906 [http-nio-8080-exec-1] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.a.f.JwtAuthenticationFilter:45 - Token claims: {user_id=mra-admin, role=MRA ADMIN, iat=1735638762, exp=1767196362}
+2024-12-31 17:17:59.945 [http-nio-8080-exec-1] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:39 - Request received to get management process tracker by office: officeId=1020, schemaName=TEMPLATE
+2024-12-31 17:17:59.945 [http-nio-8080-exec-1] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:40 - Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibXJhLWFkbWluIiwicm9sZSI6Ik1SQSBBRE1JTiIsInNuYW1lIjpudWxsLCJpYXQiOjE3MzU2Mzg3NjIsImV4cCI6MTc2NzE5NjM2Mn0.YCCJIiheiaUoHiUc1-3h9hPekNjUSN7rwUcbtWclKhI
+2024-12-31 17:20:14.751 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2024-12-31 17:20:14.807 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2024-12-31 17:20:22.209 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 20940 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2024-12-31 17:20:22.218 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2024-12-31 17:20:23.797 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-31 17:20:23.799 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-12-31 17:20:23.800 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-31 17:20:23.850 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-12-31 17:20:24.242 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 683c3739-3ecb-4597-894c-4723e69309ee
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-31 17:20:24.810 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2024-12-31 17:20:25.361 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6e981e78
+2024-12-31 17:20:25.363 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2024-12-31 17:20:25.533 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-31 17:20:25.557 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.221 seconds (process running for 6.553)
+2024-12-31 17:20:59.561 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2024-12-31 17:20:59.620 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2024-12-31 17:21:03.923 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 21054 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2024-12-31 17:21:03.928 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2024-12-31 17:21:05.680 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-31 17:21:05.684 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-12-31 17:21:05.685 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-31 17:21:05.800 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-12-31 17:21:06.245 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 287502af-4f3a-4767-b525-d28b7feea882
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-31 17:21:06.821 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2024-12-31 17:21:07.328 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@7d3c22a5
+2024-12-31 17:21:07.331 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2024-12-31 17:21:07.558 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-31 17:21:07.605 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.526 seconds (process running for 5.939)
+2024-12-31 17:21:36.636 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-31 18:23:16.831 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2024-12-31 18:23:16.889 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 11:40:40.043 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 6950 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 11:40:40.056 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 11:40:42.329 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 11:40:42.331 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 11:40:42.332 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 11:40:42.386 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 11:40:42.818 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 006a2552-522a-4fd2-8c5d-6721ffbb4052
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-01-01 11:40:43.512 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 11:40:44.105 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@4fa8bebb
+2025-01-01 11:40:44.108 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 11:40:44.311 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 11:40:44.382 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 7.454 seconds (process running for 10.996)
+2025-01-01 11:42:45.888 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 11:42:45.942 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 11:42:52.061 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 7110 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 11:42:52.067 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 11:42:53.693 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 11:42:53.696 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 11:42:53.697 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 11:42:53.755 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 11:42:54.115 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 0fd1070b-9f4d-441d-a930-89b63ba300ae
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-01-01 11:42:54.679 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 11:42:55.629 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@2f471037
+2025-01-01 11:42:55.640 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 11:42:55.915 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 11:42:55.947 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.764 seconds (process running for 6.489)
+2025-01-01 11:43:36.347 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-01 11:43:36.913 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:37 - Request received to get management process tracker by office: officeId=1020, schemaName=TEMPLATE
+2025-01-01 11:43:36.914 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:38 - Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibXJhLWFkbWluIiwicm9sZSI6Ik1SQSBBRE1JTiIsInNuYW1lIjpudWxsLCJpYXQiOjE3MzU3MTAwNjYsImV4cCI6MTc2NzI2NzY2Nn0.ddsUAL5boImRiJES5JEndO__-QWo7Bw-qgKzAhLF6u4
+2025-01-01 11:44:24.117 [http-nio-8080-exec-3] [ , ,  ] [Request-Trace-Id: ] ERROR c.d.m.l.auth.service.JwtTokenUtil:40 - JWT validation failed: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2025-01-01 11:45:10.310 [http-nio-8080-exec-4] [ , ,  ] [Request-Trace-Id: ] ERROR c.d.m.l.auth.service.JwtTokenUtil:40 - JWT validation failed: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2025-01-01 11:45:25.636 [http-nio-8080-exec-5] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:37 - Request received to get management process tracker by office: officeId=1020, schemaName=TEMPLATE
+2025-01-01 11:45:25.636 [http-nio-8080-exec-5] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:38 - Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibXJhLWFkbWluIiwicm9sZSI6Ik1SQSBBRE1JTiIsInNuYW1lIjpudWxsLCJpYXQiOjE3MzU2Mzg3NjIsImV4cCI6MTc2NzE5NjM2Mn0.YCCJIiheiaUoHiUc1-3h9hPekNjUSN7rwUcbtWclKhI
+2025-01-01 11:46:08.094 [HikariPool-1 housekeeper] [ , ,  ] [Request-Trace-Id: ] WARN  com.zaxxer.hikari.pool.HikariPool:797 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m1s528ms778µs828ns).
+2025-01-01 11:46:20.444 [http-nio-8080-exec-6] [ , ,  ] [Request-Trace-Id: ] ERROR c.d.m.l.auth.service.JwtTokenUtil:40 - JWT validation failed: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2025-01-01 11:46:36.456 [http-nio-8080-exec-7] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:37 - Request received to get management process tracker by office: officeId=1020, schemaName=TEMPLATE
+2025-01-01 11:46:36.457 [http-nio-8080-exec-7] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:38 - Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibXJhLWFkbWluIiwicm9sZSI6Ik1SQSBBRE1JTiIsInNuYW1lIjpudWxsLCJpYXQiOjE3MzU3MTAwNjYsImV4cCI6MTc2NzI2NzY2Nn0.ddsUAL5boImRiJES5JEndO__-QWo7Bw-qgKzAhLF6u4
+2025-01-01 11:47:08.052 [HikariPool-1 housekeeper] [ , ,  ] [Request-Trace-Id: ] WARN  com.zaxxer.hikari.pool.HikariPool:797 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59s957ms721µs908ns).
+2025-01-01 11:47:22.729 [http-nio-8080-exec-8] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:37 - Request received to get management process tracker by office: officeId=1020, schemaName=TEMPLATE
+2025-01-01 11:47:22.730 [http-nio-8080-exec-8] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:38 - Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibXJhLWFkbWluIiwicm9sZSI6Ik1SQSBBRE1JTiIsInNuYW1lIjpudWxsLCJpYXQiOjE3MzU3MTAwNjYsImV4cCI6MTc2NzI2NzY2Nn0.ddsUAL5boImRiJES5JEndO__-QWo7Bw-qgKzAhLF6u4
+2025-01-01 11:49:41.494 [HikariPool-1 housekeeper] [ , ,  ] [Request-Trace-Id: ] WARN  com.zaxxer.hikari.pool.HikariPool:797 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m33s442ms299µs910ns).
+2025-01-01 11:49:41.685 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 11:49:41.773 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 11:54:02.412 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 7622 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 11:54:02.418 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 11:54:04.650 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 11:54:04.652 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 11:54:04.653 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 11:54:04.723 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 11:54:05.121 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: e4e907f3-22cf-46a0-a3a8-cff6dd2366dc
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-01-01 11:54:05.691 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 11:54:06.246 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6c24f61d
+2025-01-01 11:54:06.249 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 11:54:06.505 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 11:54:06.538 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 6.765 seconds (process running for 9.308)
+2025-01-01 11:54:13.425 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-01 11:54:14.057 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalStateException: No primary or single unique constructor found for interface org.springframework.web.context.request.RequestAttributes] with root cause
+java.lang.IllegalStateException: No primary or single unique constructor found for interface org.springframework.web.context.request.RequestAttributes
+	at org.springframework.beans.BeanUtils.getResolvableConstructor(BeanUtils.java:267)
+	at org.springframework.validation.DataBinder.createObject(DataBinder.java:930)
+	at org.springframework.validation.DataBinder.construct(DataBinder.java:909)
+	at org.springframework.web.bind.ServletRequestDataBinder.construct(ServletRequestDataBinder.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletModelAttributeMethodProcessor.constructAttribute(ServletModelAttributeMethodProcessor.java:157)
+	at org.springframework.web.method.annotation.ModelAttributeMethodProcessor.resolveArgument(ModelAttributeMethodProcessor.java:148)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:226)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.doer.mraims.loanprocess.auth.filter.TokenAuthenticationFilter.doFilterInternal(TokenAuthenticationFilter.java:60)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-01 11:58:48.957 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 11:58:49.009 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 11:58:54.788 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 7835 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 11:58:54.793 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 11:58:56.488 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 11:58:56.491 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 11:58:56.492 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 11:58:56.546 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 11:58:57.003 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: f28270d4-bddc-471f-a8ed-11300d02c25c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-01-01 11:58:57.637 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 11:58:58.421 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@48b2dbc4
+2025-01-01 11:58:58.429 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 11:58:59.164 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 11:58:59.248 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 5.209 seconds (process running for 6.879)
+2025-01-01 11:59:29.608 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-01 11:59:30.172 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:44 - User ID: mra-admin
+2025-01-01 11:59:30.174 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:45 - User Role: MRA ADMIN
+2025-01-01 11:59:30.174 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:48 - Request received to get management process tracker by office: officeId=1020, schemaName=TEMPLATE
+2025-01-01 11:59:30.178 [http-nio-8080-exec-2] [ , ,  ] [Request-Trace-Id: ] INFO  c.d.m.l.f.p.m.ManagementProcessTrackerController:49 - Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibXJhLWFkbWluIiwicm9sZSI6Ik1SQSBBRE1JTiIsInNuYW1lIjpudWxsLCJpYXQiOjE3MzU3MTAwNjYsImV4cCI6MTc2NzI2NzY2Nn0.ddsUAL5boImRiJES5JEndO__-QWo7Bw-qgKzAhLF6u4
+2025-01-01 12:06:22.185 [HikariPool-1 housekeeper] [ , ,  ] [Request-Trace-Id: ] WARN  com.zaxxer.hikari.pool.HikariPool:797 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m53s654ms135µs332ns).
+2025-01-01 12:06:24.332 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 12:06:24.390 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 12:07:06.455 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 8097 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:07:06.458 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:07:08.015 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:07:08.018 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:07:08.018 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:07:08.062 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:07:08.334 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 707d9939-4209-4ec1-b0fc-422bf17079ab
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-01-01 12:07:08.849 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 12:07:09.339 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@64b73e0a
+2025-01-01 12:07:09.340 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 12:07:09.517 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:07:09.542 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.566 seconds (process running for 6.677)
+2025-01-01 12:09:32.182 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 12:09:32.247 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 12:09:37.160 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 8278 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:09:37.164 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:09:38.526 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:09:38.528 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:09:38.529 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:09:38.570 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:09:38.707 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:635 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfiguration' defined in file [/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main/com/doer/mraims/loanprocess/auth/config/SecurityConfiguration.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.springframework.security.authentication.AuthenticationProvider' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-01-01 12:09:38.710 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2025-01-01 12:09:38.748 [main] [ , ,  ] [Request-Trace-Id: ] ERROR o.s.b.d.LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.doer.mraims.loanprocess.auth.config.SecurityConfiguration required a bean of type 'org.springframework.security.authentication.AuthenticationProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationProvider' in your configuration.
+
+2025-01-01 12:24:53.240 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 8557 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:24:53.245 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:24:55.311 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:24:55.313 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:24:55.314 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:24:55.377 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:24:55.586 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:635 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfiguration' defined in file [/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main/com/doer/mraims/loanprocess/auth/config/SecurityConfiguration.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.springframework.security.authentication.AuthenticationProvider' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-01-01 12:24:55.591 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2025-01-01 12:24:55.654 [main] [ , ,  ] [Request-Trace-Id: ] ERROR o.s.b.d.LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.doer.mraims.loanprocess.auth.config.SecurityConfiguration required a bean of type 'org.springframework.security.authentication.AuthenticationProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationProvider' in your configuration.
+
+2025-01-01 12:25:19.488 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 8675 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:25:19.493 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:25:21.128 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:25:21.131 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:25:21.132 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:25:21.185 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:25:21.536 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: f04a1983-ea56-46c7-9906-f21d4e145b05
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-01-01 12:25:22.117 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 12:25:22.630 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@3b65084e
+2025-01-01 12:25:22.634 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 12:25:22.811 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:25:22.849 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.145 seconds (process running for 5.652)
+2025-01-01 12:34:09.261 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 12:34:09.345 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 12:34:16.452 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 8911 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:34:16.457 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:34:18.027 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:34:18.030 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:34:18.030 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:34:18.080 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:34:18.429 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:73 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-01 12:34:19.009 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 12:34:19.594 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@48e74764
+2025-01-01 12:34:19.600 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 12:34:19.798 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:34:19.828 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.21 seconds (process running for 5.901)
+2025-01-01 12:34:57.066 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 12:34:57.109 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 12:35:03.441 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 9051 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:35:03.448 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:35:05.062 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:35:05.066 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:35:05.066 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:35:05.129 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:35:05.457 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:73 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-01 12:35:06.037 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 12:35:06.554 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@2729bb71
+2025-01-01 12:35:06.558 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 12:35:06.764 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:35:06.809 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.126 seconds (process running for 5.567)
+2025-01-01 12:39:28.199 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 12:39:28.256 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 12:39:33.773 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 9247 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:39:33.778 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:39:35.373 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:39:35.376 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:39:35.376 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:39:35.451 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:39:35.774 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:73 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-01 12:39:36.370 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 12:39:37.143 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6c421123
+2025-01-01 12:39:37.151 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 12:39:37.401 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:39:37.456 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.493 seconds (process running for 5.829)
+2025-01-01 12:40:48.589 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 12:40:48.641 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 12:41:22.369 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 9410 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:41:22.374 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:41:23.898 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:41:23.901 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:41:23.901 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:41:23.963 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:41:24.292 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:73 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-01 12:41:24.924 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 12:41:25.433 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@365bfc5f
+2025-01-01 12:41:25.436 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 12:41:25.619 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:41:25.669 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.097 seconds (process running for 5.503)
+2025-01-01 12:41:34.329 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 12:41:34.374 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 12:41:38.737 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 9542 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:41:38.743 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:41:40.325 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:41:40.328 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:41:40.328 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:41:40.378 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:41:40.748 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 89a09171-8e6b-4fd3-8c07-25418b695679
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-01-01 12:41:41.297 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 12:41:41.815 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@7858d31d
+2025-01-01 12:41:41.818 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 12:41:41.986 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:41:42.010 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.068 seconds (process running for 5.601)
+2025-01-01 12:43:44.293 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2025-01-01 12:43:44.363 [SpringApplicationShutdownHook] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2025-01-01 12:43:51.555 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 9696 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:43:51.573 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:43:53.213 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:43:53.216 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:43:53.216 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:43:53.258 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:43:53.520 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 776c48ae-d29c-49da-82b8-0df0ed33d47a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-01-01 12:43:53.819 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:635 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0: Error creating bean with name 'securityFilterChain' defined in class path resource [com/doer/mraims/loanprocess/auth/config/SecurityConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class com.doer.mraims.loanprocess.auth.filter.TokenAuthenticationFilter does not have a registered order
+2025-01-01 12:43:53.822 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2025-01-01 12:43:53.861 [main] [ , ,  ] [Request-Trace-Id: ] ERROR o.s.boot.SpringApplication:857 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0: Error creating bean with name 'securityFilterChain' defined in class path resource [com/doer/mraims/loanprocess/auth/config/SecurityConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class com.doer.mraims.loanprocess.auth.filter.TokenAuthenticationFilter does not have a registered order
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:896)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:849)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1441)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.doer.ImsLoanApplication.main(ImsLoanApplication.java:10)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/doer/mraims/loanprocess/auth/config/SecurityConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class com.doer.mraims.loanprocess.auth.filter.TokenAuthenticationFilter does not have a registered order
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1883)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1847)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeanCollection(DefaultListableBeanFactory.java:1737)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1705)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1580)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:888)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class com.doer.mraims.loanprocess.auth.filter.TokenAuthenticationFilter does not have a registered order
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 39 common frames omitted
+Caused by: java.lang.IllegalArgumentException: The Filter class com.doer.mraims.loanprocess.auth.filter.TokenAuthenticationFilter does not have a registered order
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.addFilterAtOffsetOf(HttpSecurity.java:3355)
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.addFilterBefore(HttpSecurity.java:3348)
+	at com.doer.mraims.loanprocess.auth.config.SecurityConfiguration.securityFilterChain(SecurityConfiguration.java:29)
+	at com.doer.mraims.loanprocess.auth.config.SecurityConfiguration$$SpringCGLIB$$0.CGLIB$securityFilterChain$0(<generated>)
+	at com.doer.mraims.loanprocess.auth.config.SecurityConfiguration$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at com.doer.mraims.loanprocess.auth.config.SecurityConfiguration$$SpringCGLIB$$0.securityFilterChain(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 42 common frames omitted
+2025-01-01 12:44:31.392 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 9806 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 12:44:31.396 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 12:44:33.045 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 12:44:33.047 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 12:44:33.048 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 12:44:33.097 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 12:44:33.485 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:90 - 
+
+Using generated security password: 35476cd8-6c20-4e08-ad54-f1a450dcdedd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-01-01 12:44:33.800 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:635 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0: Error creating bean with name 'securityFilterChain' defined in class path resource [com/doer/mraims/loanprocess/auth/config/SecurityConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter does not have a registered order
+2025-01-01 12:44:33.803 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2025-01-01 12:44:33.838 [main] [ , ,  ] [Request-Trace-Id: ] ERROR o.s.boot.SpringApplication:857 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0: Error creating bean with name 'securityFilterChain' defined in class path resource [com/doer/mraims/loanprocess/auth/config/SecurityConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter does not have a registered order
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:896)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:849)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1441)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.doer.ImsLoanApplication.main(ImsLoanApplication.java:10)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/doer/mraims/loanprocess/auth/config/SecurityConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter does not have a registered order
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1883)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1847)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeanCollection(DefaultListableBeanFactory.java:1737)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1705)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1580)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:888)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter does not have a registered order
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 39 common frames omitted
+Caused by: java.lang.IllegalArgumentException: The Filter class org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter does not have a registered order
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.addFilterAtOffsetOf(HttpSecurity.java:3355)
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.addFilterBefore(HttpSecurity.java:3348)
+	at com.doer.mraims.loanprocess.auth.config.SecurityConfiguration.securityFilterChain(SecurityConfiguration.java:30)
+	at com.doer.mraims.loanprocess.auth.config.SecurityConfiguration$$SpringCGLIB$$0.CGLIB$securityFilterChain$0(<generated>)
+	at com.doer.mraims.loanprocess.auth.config.SecurityConfiguration$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at com.doer.mraims.loanprocess.auth.config.SecurityConfiguration$$SpringCGLIB$$0.securityFilterChain(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 42 common frames omitted
+2025-01-01 13:22:08.259 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 10660 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 13:22:08.265 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 13:22:10.208 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 13:22:10.211 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 13:22:10.212 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 13:22:10.260 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[.[.[/mra-ims/loan/process/api/v1]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 13:22:10.458 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:635 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'managementProcessTrackerController' defined in file [/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main/com/doer/mraims/loanprocess/features/processtracker/management/ManagementProcessTrackerController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'managementProcessTrackerService' defined in file [/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main/com/doer/mraims/loanprocess/features/processtracker/management/service/ManagementProcessTrackerService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-01-01 13:22:10.462 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2025-01-01 13:22:10.505 [main] [ , ,  ] [Request-Trace-Id: ] ERROR o.s.b.d.LoggingFailureAnalysisReporter:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService required a bean of type 'com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerAdapter' in your configuration.
+
+2025-01-01 13:23:25.037 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:53 - Starting ImsLoanApplication using Java 21.0.5 with PID 10793 (/home/mehedi/Celloscope/ims/05-loan-service/build/classes/java/main started by mehedi in /home/mehedi/Celloscope/ims/05-loan-service)
+2025-01-01 13:23:25.040 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2025-01-01 13:23:26.555 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-01 13:23:26.557 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2025-01-01 13:23:26.557 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-01 13:23:26.598 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.c.c.C.[.[.[/mra-ims/loan/process/api/v1]:173 - Initializing Spring embedded WebApplicationContext
+2025-01-01 13:23:26.834 [main] [ , ,  ] [Request-Trace-Id: ] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:73 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-01-01 13:23:27.367 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:109 - HikariPool-1 - Starting...
+2025-01-01 13:23:27.885 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.pool.HikariPool:554 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6b2ef50e
+2025-01-01 13:23:27.890 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.zaxxer.hikari.HikariDataSource:122 - HikariPool-1 - Start completed.
+2025-01-01 13:23:28.051 [main] [ , ,  ] [Request-Trace-Id: ] INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2025-01-01 13:23:28.075 [main] [ , ,  ] [Request-Trace-Id: ] INFO  com.doer.ImsLoanApplication:59 - Started ImsLoanApplication in 4.425 seconds (process running for 6.084)

@@ -8,27 +8,6 @@ import java.util.Map;
 @Component
 public class UtilService {
 
-    public <T> Map<String, Map<String, T>> featureQueryMap(Class<T> queryProviderClass, Map<String, T> queryProviders) {
-
-        Map<String, Map<String, T>> featureQueryMap = new HashMap<>();
-
-        queryProviders.forEach((beanName, queryProvider) -> {
-            String[] parts = beanName.split("(?=[A-Z])");
-            if (parts.length < 2) {
-                throw new IllegalStateException("Invalid QueryProvider name: " + beanName);
-            }
-
-            String featureName = parts[0].toLowerCase();
-            String dbType = parts[1].toLowerCase();
-
-            featureQueryMap
-                    .computeIfAbsent(featureName, key -> new HashMap<>())
-                    .put(dbType, queryProvider);
-        });
-
-        return featureQueryMap;
-    }
-
     public static Map<String, Object> toCamelCaseKeys(Map<String, Object> originalMap) {
         Map<String, Object> camelCaseMap = new HashMap<>();
         originalMap.forEach((key, value) -> {

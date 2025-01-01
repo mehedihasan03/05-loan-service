@@ -4,25 +4,18 @@ import com.doer.mraims.loanprocess.core.helper.CommonObjectResponseDTO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.io.Decoders;
-import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-
-import java.nio.charset.StandardCharsets;
-import java.security.Key;
 
 @Component
 @Slf4j
 public class JwtTokenUtil {
+
     @Value("${access.token.secret}")
     private String jwtSecretKey;
 
-    // Added by Kamal Parvez on 2024-12-31 to validate token
-    public CommonObjectResponseDTO<Claims>  validateToken(String token) {
+    public CommonObjectResponseDTO<Claims> validateToken(String token) {
         try {
             Claims claims = Jwts.parserBuilder()
                     .setSigningKey(jwtSecretKey.getBytes())
@@ -49,6 +42,6 @@ public class JwtTokenUtil {
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
             throw new IllegalArgumentException("Authorization header must start with 'Bearer '");
         }
-        return authorizationHeader.substring(7); // Remove "Bearer " prefix
+        return authorizationHeader.replace("Bearer ", "").trim();
     }
 }

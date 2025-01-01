@@ -1,25 +1,21 @@
-package com.doer.mraims.loanprocess.auth.service;
+package com.doer.mraims.loanprocess.auth.repository;
+
 import com.doer.mraims.loanprocess.core.utils.Table;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import static com.doer.mraims.loanprocess.core.utils.DBSchema.*;
+import static com.doer.mraims.loanprocess.core.utils.DBSchema.COMMON;
 
 @Slf4j
-@Service
-public class TokenUserStatusService {
+@Repository
+public class AuthUserRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public TokenUserStatusService(JdbcTemplate jdbcTemplate) {
+    public AuthUserRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -42,7 +38,7 @@ public class TokenUserStatusService {
         }
     }
 
-    public Map<String, Object>  getPostgresTokenUserStatus(String userId) {
+    public Map<String, Object> getPostgresTokenUserStatus(String userId) {
         String sql = String.format(
                 "SELECT t.revoked AS revoked, lh.status AS status " +
                         "FROM %s%s t, %s%s lh " +

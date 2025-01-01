@@ -1,7 +1,7 @@
-package com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.oracle;
+package com.doer.mraims.loanprocess.features.processtracker.management.repository.query.oracle;
 
 import com.doer.mraims.loanprocess.auth.model.AuthUser;
-import com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerQueryProvider;
+import com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerQueryProvider;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

@@ -1,7 +1,7 @@
-package com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.postgres;
+package com.doer.mraims.loanprocess.features.processtracker.management.repository.query.postgres;
 
 import com.doer.mraims.loanprocess.auth.model.AuthUser;
-import com.doer.mraims.loanprocess.features.processtracker.management.repository.queryManagement.ManagementProcessTrackerQueryProvider;
+import com.doer.mraims.loanprocess.features.processtracker.management.repository.query.ManagementProcessTrackerQueryProvider;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import java.util.Map;
 public class PostgresManagementProcessTrackerQuery implements ManagementProcessTrackerQueryProvider {
 
     public Map<String, Object> getManagementProcessTrackerQuery(AuthUser authUser, String officeId) {
-            String query = "SELECT " +
+        String query = "SELECT " +
                 "    mpt.management_process_id, " +
                 "    mpt.office_id, " +
                 "    o.office_name_en, " +
@@ -19,7 +19,7 @@ public class PostgresManagementProcessTrackerQuery implements ManagementProcessT
                 "    mpt.business_date, " +
                 "    to_char(mpt.business_date, 'day') as business_day" +
                 "from " + authUser.getSchemaName() + ".management_process_tracker mpt " +
-                "    join "  + authUser.getSchemaName() + ".office o on mpt.office_id = o.office_id " +
+                "    join " + authUser.getSchemaName() + ".office o on mpt.office_id = o.office_id " +
                 "where " +
                 "    mpt.office_id = ?";
         Map<String, Object> paramMap = new HashMap<>();

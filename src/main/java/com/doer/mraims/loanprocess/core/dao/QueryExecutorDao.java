@@ -18,12 +18,15 @@ import java.util.Map;
 
 @Slf4j
 @Repository("queryExecutorDao")
-public class QueryExecutorDao implements QueryExecutorInterface {
+public class QueryExecutorDao {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
-    @Override
+    public QueryExecutorDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+
     public int saveSingleRow(String sql, Object... params) {
         if (!StringUtils.hasText(sql)) {
             log.warn("SQL is null or empty: {}", sql);
@@ -42,7 +45,7 @@ public class QueryExecutorDao implements QueryExecutorInterface {
         }
     }
 
-    @Override
+
     public JSONArray getMultipleRows(Map<String, Object> objectMap) {
         try {
             List<Map<String, Object>> rows = jdbcTemplate.queryForList((String) objectMap.get("query"), objectMap.get("params"));
@@ -60,7 +63,7 @@ public class QueryExecutorDao implements QueryExecutorInterface {
         }
     }
 
-    @Override
+
     public JSONObject getSingleRow(Map<String, Object> objectMap) {
         try {
             Map<String, Object> row = jdbcTemplate.queryForMap((String) objectMap.get("query"), objectMap.get("params"));
