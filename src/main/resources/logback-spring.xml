@@ -23,7 +23,7 @@
 		<prudent>false</prudent>
 		<append>true</append>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>log/archived/07-loan/07-loan-api__%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+			<fileNamePattern>log/archived/05-loan/loan-service__%d{yyyy-MM-dd}.log.gz</fileNamePattern>
 		</rollingPolicy>
 		<encoder>
 			<charset>UTF-8</charset>

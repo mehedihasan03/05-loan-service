@@ -1,5 +1,6 @@
 package com.doer.mraims.loanprocess.features.processtracker.management.response;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,11 +15,13 @@ import java.util.List;
 @AllArgsConstructor
 public class ManagementResponseDto {
 
-    private String managementProcessId;
-    private String officeId;
-    private String officeNameEn;
-    private String officeNameBn;
-    private Date businessDate;
+    private String management_process_id;
+    private String office_id;
+    private String office_name_bn;
+    private String office_name_en;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date business_date;
     private String businessDay;
     private String btnCreateTransactionEnabled;
     private List<String> samityIdList;

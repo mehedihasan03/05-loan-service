@@ -2,9 +2,12 @@ package com.doer.mraims.loanprocess.features.processtracker.management;
 
 import com.doer.mraims.loanprocess.auth.model.AuthUser;
 import com.doer.mraims.loanprocess.core.helper.CommonObjectResponseDTO;
+import com.doer.mraims.loanprocess.features.processtracker.management.response.ManagementResponseDto;
 import com.doer.mraims.loanprocess.features.processtracker.management.service.ManagementProcessTrackerService;
+import com.nimbusds.jose.shaded.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -24,24 +27,15 @@ public class ManagementProcessTrackerController {
     }
 
     @PostMapping(BY_OFFICE)
-    public ResponseEntity<CommonObjectResponseDTO<JSONObject>> getManagementProcessTracker(
+    public ResponseEntity<CommonObjectResponseDTO<ManagementResponseDto>> getManagementProcessTracker(
             @RequestParam String officeId,
             @RequestParam String schemaName,
-            @RequestHeader("Authorization") String authorizationHeader,
             @AuthenticationPrincipal AuthUser authUser
     ) {
-
-        String userId = authUser.getUserId();
-        String userRole = authUser.getUserRole();
-        log.info("User ID: {}", userId);
-        log.info("User Role: {}", userRole);
-
-
-        log.info("Request received to get management process tracker by office: officeId={}, schemaName={}", officeId, schemaName);
-        log.info("Authorization header: {}", authorizationHeader);
         try {
-            CommonObjectResponseDTO<JSONObject> response = managementProcessTrackerService.getManagementProcessTrackerByOffice(authUser, officeId);
-            return ResponseEntity.ok(response);
+            CommonObjectResponseDTO<ManagementResponseDto> response = managementProcessTrackerService.getManagementProcessTrackerByOffice(authUser, officeId);
+            log.info("Response: {}", response);
+            return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(response);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(new CommonObjectResponseDTO<>(false, 400, "Invalid input: " + e.getMessage(), null));
         } catch (Exception e) {

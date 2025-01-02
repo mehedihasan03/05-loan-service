@@ -6,15 +6,11 @@ import org.json.JSONObject;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 @Slf4j
 @Repository("queryExecutorDao")
@@ -66,22 +62,16 @@ public class QueryExecutorDao {
 
     public JSONObject getSingleRow(String sqlQuery, Object... params) {
         try {
-            // Ensure parameters are passed correctly as varargs
             Map<String, Object> row = jdbcTemplate.queryForMap(sqlQuery, params.getClass().isArray() ? params : params.clone());
-            // Convert result to JSONObject with lowercase keys
             JSONObject result = new JSONObject();
             row.forEach((key, value) -> result.put(key.toLowerCase(), value));
             return result;
         } catch (EmptyResultDataAccessException e) {
             log.warn("No data found for query: {}", sqlQuery);
-            return new JSONObject();  // Return an empty JSON object if no results
+            return new JSONObject();
         } catch (Exception e) {
             log.error("Error while executing query: {}", sqlQuery, e);
             throw new RuntimeException("Failed to execute query: " + e.getMessage(), e);
         }
     }
-
-
-
-
 }
