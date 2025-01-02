@@ -32,7 +32,6 @@ public class ApplicationConfig {
     }
 
     @Bean
-    @SuppressWarnings({"warning"})
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
