@@ -28,7 +28,6 @@ public class TokenValidationService {
         String token = jwtTokenUtil.extractTokenFromHeader(authorizationHeader);
         return jwtTokenUtil.validateToken(token);
     }
-
     public AuthUser validateAndFetchUser(String authorizationHeader) {
         CommonObjectResponseDTO<Claims> claims = validateAndExtractClaims(authorizationHeader);
         String userId = claims.getData().get("user_id").toString();
