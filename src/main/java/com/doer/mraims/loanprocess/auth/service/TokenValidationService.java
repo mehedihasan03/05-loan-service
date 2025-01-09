@@ -15,7 +15,7 @@ import static com.doer.mraims.loanprocess.core.utils.Constants.POSTGRES;
 
 @Service
 public class TokenValidationService {
-    @Value("${database.platform.active}")
+    @Value("${spring.profiles.active}")
     private String dbType;
 
     @Autowired
@@ -24,34 +24,43 @@ public class TokenValidationService {
     @Autowired
     private AuthUserRepository authUserRepository;
 
-    public CommonObjectResponseDTO<Claims> validateAndExtractClaims(String authorizationHeader) {
+    public AuthUser validateTokenAndExtractCredentialsByApiUrl(String authorizationHeader) {
         String token = jwtTokenUtil.extractTokenFromHeader(authorizationHeader);
-        return jwtTokenUtil.validateToken(token);
-    }
-    public AuthUser validateAndFetchUser(String authorizationHeader) {
-        CommonObjectResponseDTO<Claims> claims = validateAndExtractClaims(authorizationHeader);
-        String userId = claims.getData().get("user_id").toString();
-
-        Map<String, Object> tokenUserMap;
-        if (ORACLE.equalsIgnoreCase(dbType)) {
-            tokenUserMap = authUserRepository.getOracleTokenUserStatus(userId);
-
-        } else if (POSTGRES.equalsIgnoreCase(dbType)) {
-            tokenUserMap = authUserRepository.getPostgresTokenUserStatus(userId);
-        } else {
-            throw new IllegalArgumentException("Unsupported database type: " + dbType);
+        JwtTokenUtil.TokenValidationResponse response = jwtTokenUtil.validateJwtTokenByApiUrl(token);
+        if (!response.isValid()) {
+            throw new IllegalArgumentException("Token is invalid");
         }
+        @SuppressWarnings("unchecked")
+        Map<String, Object> credentials = (Map<String, Object>) response.getCredentials();
+        return AuthUser.builder()
+                .userId((String) credentials.get("user_id"))
+                .userRole((String) credentials.get("role"))
+                .schemaName((String) credentials.get("sname"))
+                .mfiId((String) credentials.get("sid"))
+                .build();
+    }
+
+
+    public AuthUser validateAndExtractClaimsBySelf(String authorizationHeader) {
+        String token = jwtTokenUtil.extractTokenFromHeader(authorizationHeader);
+        CommonObjectResponseDTO<Claims> claimsResponse = jwtTokenUtil.validateJwtTokenSelf(token);
+        String userId = claimsResponse.getData().get("user_id").toString();
+        Map<String, Object> tokenUserMap = switch (dbType.toUpperCase()) {
+            case ORACLE -> authUserRepository.getOracleTokenUserStatus(userId);
+            case POSTGRES -> authUserRepository.getPostgresTokenUserStatus(userId);
+            default -> throw new IllegalArgumentException("Unsupported database type: " + dbType);
+        };
         String revoked = (String) tokenUserMap.get("revoked");
         String status = (String) tokenUserMap.get("status");
-        if (revoked != null && status != null && revoked.equalsIgnoreCase("No") && status.equalsIgnoreCase("Signin")) {
-            AuthUser authUser = new AuthUser();
-            authUser.setUserId(userId);
-            authUser.setUserRole((String) claims.getData().get("role"));
-            authUser.setSchemaName((String) claims.getData().get("sname"));
-            authUser.setMfiId((String) claims.getData().get("sid"));
-            return authUser;
-        } else {
+        if (!"No".equalsIgnoreCase(revoked) || !"Signin".equalsIgnoreCase(status)) {
             throw new IllegalArgumentException("Token is revoked or user is not signed in");
         }
+        return AuthUser.builder()
+                .userId(userId)
+                .userRole((String) claimsResponse.getData().get("role"))
+                .schemaName((String) claimsResponse.getData().get("sname"))
+                .mfiId((String) claimsResponse.getData().get("sid"))
+                .build();
     }
+
 }

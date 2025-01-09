@@ -34,21 +34,17 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
-
         try {
-            AuthUser authUser = tokenValidationService.validateAndFetchUser(authHeader);
-
+            AuthUser authUser = tokenValidationService.validateTokenAndExtractCredentialsByApiUrl(authHeader);
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
                     authUser, null, List.of(new SimpleGrantedAuthority(authUser.getUserRole()))
             );
             SecurityContextHolder.getContext().setAuthentication(authentication);
-
         } catch (IllegalArgumentException ex) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.getWriter().write("Unauthorized: " + ex.getMessage());
             return;
         }
-
         filterChain.doFilter(request, response);
     }
 }

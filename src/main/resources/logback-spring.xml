@@ -31,14 +31,22 @@
 		</encoder>
 	</appender>
 
-
+	<!-- Root logger -->
 	<root level="DEBUG">
 		<appender-ref ref="console" />
 		<appender-ref ref="file" />
 	</root>
+
+	<!-- Custom log levels -->
 	<logger name="org.springframework" level="WARN"/>
 	<logger name="reactor" level="WARN"/>
 	<logger name="org.springdoc" level="WARN"/>
 	<logger name="_org.springframework" level="WARN"/>
 	<logger name="io" level="WARN"/>
+
+	<!-- Hikari Connection Pooling -->
+	<logger name="com.zaxxer.hikari" level="DEBUG"/>
+
+	<!-- Spring Security -->
+	<logger name="org.springframework.security" level="ERROR"/>
 </configuration>

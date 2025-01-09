@@ -24,7 +24,7 @@ public class JsonToDtoMapper {
                     Object value = jsonObject.get(fieldName);
 
                     if (field.getType().equals(List.class)) {
-                        if (value instanceof org.json.JSONArray jsonArray) {
+                        if (value instanceof JSONArray jsonArray) {
                             List<String> list = new ArrayList<>();
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 list.add(jsonArray.getString(i));

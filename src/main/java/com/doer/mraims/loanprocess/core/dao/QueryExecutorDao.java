@@ -7,10 +7,11 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import java.math.BigDecimal;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Repository("queryExecutorDao")
@@ -22,15 +23,13 @@ public class QueryExecutorDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-
-    public int saveSingleRow(String sql, Object... params) {
+    public int executeSingleInsertOrUpdateQuery(String sql, Object... params) {
         if (!StringUtils.hasText(sql)) {
-            log.warn("SQL is null or empty: {}", sql);
+            log.info("SQL is null or empty: {}", sql);
             return 0;
         }
-
         try {
-            log.debug("Executing SQL: {} with params: {}", sql, params);
+            log.info("Executing SQL: {} with params: {}", sql, params);
             return jdbcTemplate.update(sql, params);
         } catch (DataAccessException dae) {
             log.error("Database access error while executing query: {}", sql, dae);
@@ -41,37 +40,56 @@ public class QueryExecutorDao {
         }
     }
 
-
-    public JSONArray getMultipleRows(Map<String, Object> objectMap) {
+    @Transactional
+    public void executeMultipleInsertOrUpdateQueries(List<String> sql, List<Object[]> parameters) {
         try {
-            List<Map<String, Object>> rows = jdbcTemplate.queryForList((String) objectMap.get("query"), objectMap.get("params"));
-            JSONArray result = new JSONArray();
+            for (int i = 0; i < sql.size(); i++) {
+                String query = sql.get(i);
+                Object[] params = parameters.get(i);
+                log.debug("Executing query: {} with params: {}", query, params);
+                jdbcTemplate.update(query, params);
+            }
+            log.info("All queries executed successfully, committing transaction");
+        } catch (DataAccessException dae) {
+            log.error("Error while executing queries, rolling back transaction: ", dae);
+            throw new RuntimeException("Error executing queries", dae);
+        } catch (Exception e) {
+            log.error("Unexpected error while executing queries:", e);
+            throw new RuntimeException("An unexpected error occurred", e);
+        }
+    }
+
+    public JSONArray getMultipleRowsData(String query, Object... params) {
+        JSONArray result = new JSONArray();
+        try {
+            List<Map<String, Object>> rows = jdbcTemplate.queryForList(query, params);
             for (Map<String, Object> row : rows) {
                 JSONObject json = new JSONObject();
-                json.put("name", new BigDecimal(0));
                 row.forEach((key, value) -> json.put(key.toLowerCase(), value));
                 result.put(json);
             }
             return result;
+        } catch (EmptyResultDataAccessException e) {
+            log.info("No data found for query: {}", query);
+            return new JSONArray();
         } catch (Exception e) {
-            log.error("Error while executing query: {}", objectMap.get("query"), e);
-            throw new RuntimeException("Failed to execute query", e);
+            log.error("Error while executing query: {}", query, e);
+            throw new RuntimeException("Failed to execute query: " + e.getMessage(), e);
         }
     }
 
-
-    public JSONObject getSingleRow(String sqlQuery, Object... params) {
+    public JSONObject getSingleRowData(String query, Object... params) {
+        JSONObject result = new JSONObject();
         try {
-            Map<String, Object> row = jdbcTemplate.queryForMap(sqlQuery, params.getClass().isArray() ? params : params.clone());
-            JSONObject result = new JSONObject();
+            Map<String, Object> row = jdbcTemplate.queryForMap(query, params.getClass().isArray() ? params : params.clone());
             row.forEach((key, value) -> result.put(key.toLowerCase(), value));
             return result;
         } catch (EmptyResultDataAccessException e) {
-            log.warn("No data found for query: {}", sqlQuery);
-            return new JSONObject();
+            log.info("No data found for query : {}", query);
+            return null;
         } catch (Exception e) {
-            log.error("Error while executing query: {}", sqlQuery, e);
-            throw new RuntimeException("Failed to execute query: " + e.getMessage(), e);
+            log.error("Error while executing query : {}", query, e);
+            throw new RuntimeException("Failed to execute query : " + e.getMessage(), e);
         }
     }
 }

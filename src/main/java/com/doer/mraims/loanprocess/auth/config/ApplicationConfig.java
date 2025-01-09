@@ -20,7 +20,9 @@ public class ApplicationConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return tokenValidationService::validateAndFetchUser;
+        return tokenValidationService::validateTokenAndExtractCredentialsByApiUrl;
+//        return tokenValidationService::validateAndExtractClaimsBySelf;
+
     }
 
     @Bean
@@ -40,4 +42,5 @@ public class ApplicationConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 }

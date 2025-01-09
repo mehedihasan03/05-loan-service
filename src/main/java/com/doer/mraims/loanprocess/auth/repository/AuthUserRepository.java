@@ -27,11 +27,8 @@ public class AuthUserRepository {
                         "ORDER BY t.expiry_date DESC, lh.signin_time DESC FETCH NEXT 1 ROWS ONLY",
                 COMMON.getSchema(), Table.SEC_REFRESH_TOKEN, COMMON.getSchema(), Table.SEC_LOGIN_HISTORY
         );
-
         try {
-            Map<String, Object> objectMap = jdbcTemplate.queryForMap(sql, userId);
-
-            return objectMap;
+            return jdbcTemplate.queryForMap(sql, userId);
         } catch (Exception e) {
             log.error("An exception occurred while getting token status from Oracle: {}", e.getMessage());
             throw new RuntimeException("Error fetching Oracle token user status", e);
@@ -46,7 +43,6 @@ public class AuthUserRepository {
                         "ORDER BY t.expiry_date DESC, lh.signin_time DESC",
                 COMMON.getSchema(), Table.SEC_REFRESH_TOKEN, COMMON.getSchema(), Table.SEC_LOGIN_HISTORY
         );
-
         try {
             return jdbcTemplate.queryForMap(sql, userId);
         } catch (Exception e) {
